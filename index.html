@@ -66,12 +66,16 @@
                 errorMessage.style.display = "block"; // Pokaż błąd
             }
         }
-        document.getElementById("passwordInput").addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-            checkPassword(); // Uruchom funkcję logowania
-        }
-    });
-    </script>
+
+        // Obsługa klawisza Enter
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("passwordInput").addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                    checkPassword(); // Uruchom funkcję sprawdzającą hasło
+                }
+            });
+        });
+    </script
 
     <!-- header i naglowek   -->
     <header>
