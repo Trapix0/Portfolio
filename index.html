@@ -5,17 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eKino</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const correctPassword = "danielorlickipf"; // Ustaw swoje hasło
-            let userPassword = prompt("Podaj hasło, aby uzyskać dostęp:");
-
-            if (userPassword !== correctPassword) {
-                alert("Nieprawidłowe hasło! Dostęp zabroniony.");
-                document.body.innerHTML = ""; // Usunięcie zawartości strony
-            }
-        });
-    </script>
+    
      <style>
         /* Styl okna modalnego */
         #passwordModal {
@@ -55,6 +45,29 @@
     </style>
 </head>
 <body>
+    <div id="passwordModal">
+        <div id="modalContent">
+            <h2>Podaj hasło, aby uzyskać dostęp</h2>
+            <input type="password" id="passwordInput" placeholder="Wpisz hasło">
+            <br>
+            <button onclick="checkPassword()">Wejdź</button>
+            <p id="errorMessage" style="color: red; display: none;">Nieprawidłowe hasło!</p>
+        </div>
+    </div>
+    <script>
+        function checkPassword() {
+            const correctPassword = "tajnehaslo"; // Ustaw swoje hasło
+            const userPassword = document.getElementById("passwordInput").value;
+            const errorMessage = document.getElementById("errorMessage");
+
+            if (userPassword === correctPassword) {
+                document.getElementById("passwordModal").style.display = "none"; // Ukryj modal
+            } else {
+                errorMessage.style.display = "block"; // Pokaż błąd
+            }
+        }
+    </script>
+
     <!-- header i naglowek   -->
     <header>
         <div class="logo">eKino</div>
