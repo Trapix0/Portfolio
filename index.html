@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eKino</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const correctPassword = "danielorlickipf"; // Ustaw swoje hasło
+            let userPassword = prompt("Podaj hasło, aby uzyskać dostęp:");
+
+            if (userPassword !== correctPassword) {
+                alert("Nieprawidłowe hasło! Dostęp zabroniony.");
+                document.body.innerHTML = ""; // Usunięcie zawartości strony
+            }
+        });
+    </script>
 </head>
 <body>
     <!-- header i naglowek   -->
